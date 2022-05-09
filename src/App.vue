@@ -27,7 +27,7 @@
                 this.result = ''
             },
             calculate() {
-
+                this.result = eval(this.result)
             }
         }
     }
