@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="grid">
-            <input type="text" v-model="result" placeholder="0">
+            <input type="text" readonly v-model="result" placeholder="0">
             <button class="cell num" @click="input(number)" v-for="number in numbers">{{ number }}</button>
             <button class="cell op" @click="input(operation)" v-for="operation in operations">{{ operation }}</button>
             <button class="cell op" @click="reset">AC</button>
@@ -21,6 +21,7 @@
         },
         methods: {
             input(char) {
+                this.result = this.result.toString()
                 this.result += char
             },
             reset() {
