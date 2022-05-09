@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <div class="grid">
-            <input type="text" placeholder="0">
-            <button class="cell num"></button>
+            <input type="text" v-model="result" placeholder="0">
+            <button class="cell num" v-for="number in numbers">{{ number }}</button>
             <button class="cell op"></button>
             <button class="cell op"></button>
             <button class="cell op"></button>
