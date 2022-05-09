@@ -4,8 +4,8 @@
             <input type="text" v-model="result" placeholder="0">
             <button class="cell num" @click="input(number)" v-for="number in numbers">{{ number }}</button>
             <button class="cell op" @click="input(operation)" v-for="operation in operations">{{ operation }}</button>
-            <button class="cell op">AC</button>
-            <button class="cell op">=</button>
+            <button class="cell op" @click="reset">AC</button>
+            <button class="cell op" @click="calculate">=</button>
         </div>
     </div>
 </template>
@@ -24,7 +24,7 @@
                 this.result += char
             },
             reset() {
-
+                this.result = ''
             },
             calculate() {
 
