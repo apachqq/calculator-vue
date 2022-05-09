@@ -2,10 +2,10 @@
     <div id="app">
         <div class="grid">
             <input type="text" v-model="result" placeholder="0">
-            <button class="cell num" v-for="number in numbers">{{ number }}</button>
-            <button class="cell op"></button>
-            <button class="cell op"></button>
-            <button class="cell op"></button>
+            <button class="cell num" @click="input(number)" v-for="number in numbers">{{ number }}</button>
+            <button class="cell op" @click="input(operation)" v-for="operation in operations">{{ operation }}</button>
+            <button class="cell op">AC</button>
+            <button class="cell op">=</button>
         </div>
     </div>
 </template>
@@ -17,6 +17,17 @@
                 result: '',
                 numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
                 operations: ['+', '-', '*', '/']
+            }
+        },
+        methods: {
+            input(char) {
+                this.result += char
+            },
+            reset() {
+
+            },
+            calculate() {
+
             }
         }
     }
