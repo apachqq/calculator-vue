@@ -11,36 +11,12 @@
 </template>
 
 <script>
+    import AppMixin from '@/mixins/AppMixin'
+
     export default {
-        data() {
-            return {
-                result: '',
-                numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-                operations: ['+', '-', '*', '/']
-            }
-        },
-        methods: {
-            input(char) {
-                this.result = this.result.toString()
-                this.result += char
-            },
-            reset() {
-                this.result = ''
-            },
-            calculate() {
-                this.result = eval(this.result)
-            }
-        }
+        mixins: [AppMixin]
     }
 </script>
 
 <style>
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
 </style>
